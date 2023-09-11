@@ -1,8 +1,12 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres', 'postgres', '*BancoDeDados1*', {
-	host: 'localhost',
-	dialect: 'postgres', // Ou o dialect correspondente ao seu banco de dados (por exemplo, 'mysql' para MySQL)
-});
+const config = require('./config');
+
+const sequelize = new Sequelize(config.dbUrl);
+
+// const sequelize = new Sequelize('postgres', 'postgres', '*BancoDeDados1*', {
+// 	host: 'localhost',
+// 	dialect: 'postgres', // Ou o dialect correspondente ao seu banco de dados (por exemplo, 'mysql' para MySQL)
+// });
 
 // Teste de conexão
 sequelize.authenticate()
