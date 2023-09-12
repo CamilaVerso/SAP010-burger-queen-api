@@ -6,7 +6,7 @@ const pool = new Pool({
 	host: 'localhost',
 	database: 'postgres',
 	password: '*BancoDeDados1*',
-	port: 5432, // A porta padrão do PostgreSQL
+	port: 5433, // A porta padrão do PostgreSQL
 });
 
 const sequelize = new Sequelize(
