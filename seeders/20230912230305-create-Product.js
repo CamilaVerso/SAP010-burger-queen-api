@@ -12,6 +12,14 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'XBurguer',
+        price: 12.90,
+        image: 'url_da_imagem',
+        type: 'almoço',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
 
     ]);
 
@@ -19,7 +27,7 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    await queryInterface.bulkDelete('Products', null, {});
+    await queryInterface.bulkDelete('Products', productsData, {});
 
     return Promise.resolve();
   },
