@@ -24,12 +24,12 @@ module.exports = (sequelize) => {
 		},
 	});
 
-	// Product.associate = (models) => {
-	// 	Product.belongsToMany(models.Order, {
-	// 		through: models.OrderProducts,
-	// 		foreignKey: 'productId',
-	// 	});
-	// };
+	Product.associate = (models) => {
+		Product.belongsToMany(models.Order, {
+			through: models.OrderProducts,
+			foreignKey: 'productId',
+		});
+	};
 
 	return Product;
 };
