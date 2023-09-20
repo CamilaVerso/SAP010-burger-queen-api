@@ -1,8 +1,7 @@
-'use strict';
-
+/* eslint-disable linebreak-style */
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  up: async (queryInterface) => {
     await queryInterface.bulkInsert('Orders', [
       {
         userId: 1,
@@ -31,7 +30,6 @@ module.exports = {
         updatedAt: new Date(),
       },
     ];
-    
 
     await queryInterface.bulkInsert('OrderProducts', orderProductsData);
     // const ordersData = [
@@ -66,10 +64,9 @@ module.exports = {
     // ];
 
     // await queryInterface.bulkInsert('Order', ordersData, {});
-    
   },
 
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface) => {
     await queryInterface.bulkDelete('Orders', null, {});
     await queryInterface.bulkDelete('OrderProducts', null, {});
   },
